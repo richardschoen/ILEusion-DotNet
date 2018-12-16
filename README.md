@@ -12,7 +12,7 @@ The assembly will be able to be used with the following .Net application version
 Download Offline Nuget package and sample C# program from the releases page. </br>
 https://github.com/richardschoen/ILEusion-DotNet/releases</br>
 
-Info on ILEusion and associated projects.</br>
+Info on ILEusion and associated IBM i projects required to use the .Net assembly.</br>
  
 **ILEusion** - IBM i accessible via HTTP or Db. (Based on ILEastic and noxDB)</br>
 Github link: https://github.com/sitemule/ILEusion</br>
