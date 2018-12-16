@@ -7,7 +7,7 @@ The assembly will be able to be used with the following .Net application version
 **.Net Framework 4.6.1** and above.</br>
 **.Net Core Version 2.0** and above. </br>
 **.Net Framework 4.6.1** and above with Mono .Net on IBMi.</br> 
-**Other Mono .Net environments** - Not sure about other Mono environments but since the DLL is pure C# it should work work with all versions of Mono.
+**Other Mono .Net environments** - Not sure about other Mono environments but since the DLL is pure C# it should work with all versions of Mono.
 
 Info on ILEusion and associated projects.</br>
  
