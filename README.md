@@ -9,6 +9,9 @@ The assembly will be able to be used with the following .Net application version
 **.Net Framework 4.6.1** and above with Mono .Net on IBMi.</br> 
 **Other Mono .Net environments** - Not sure about other Mono environments but since the DLL is pure C# it should work with all versions of Mono.
 
+Download Offline Nuget package and sample C# program from the releases page. 
+https://github.com/richardschoen/ILEusion-DotNet/releases
+
 Info on ILEusion and associated projects.</br>
  
 **ILEusion** - IBM i accessible via HTTP or Db. (Based on ILEastic and noxDB)</br>
