@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>ILEusionStd</RootNamespace>
+    <AssemblyName>ILEusionStd</AssemblyName>
+    <Version>1.0.1.2</Version>
+    <Authors>Richard Schoen</Authors>
+    <Company>RichardSchoen.Net</Company>
+    <Product>ILEusion .Net Service Wrapper - Dotnet Standard</Product>
+    <Description>This is an IBMi data access layer for ILEusion that can be used with the standard Windows .Net Framework 4.6.1 and above as well as .Net Core 2.0.0 and above. It requires an IBM i system running an intance of the ILEusion webservice available here: https://github.com/sitemule/ILEusion</Description>
+    <Copyright>Richard Schoen</Copyright>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <AssemblyVersion>1.0.1.2</AssemblyVersion>
+    <FileVersion>1.0.1.2</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<Deterministic>False</Deterministic>
+	<PackageProjectUrl>https://github.com/richardschoen/ILEusion-DotNet</PackageProjectUrl>
+	<PackageTags>ibmi as400 db2 sql program ile call cl rpg cobol microservice dotnet core framework data access http command</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+</Project>

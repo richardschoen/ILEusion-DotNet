@@ -1,0 +1,61 @@
+﻿------------------------------------------------------------------------------------------
+Version Notes
+------------------------------------------------------------------------------------------
+Version 1.0.1.0 - 12/16/2018 - Richard Schoen
+-Initial alpha build of ILEusion service assembly. 
+
+Version 1.0.1.1 - 12/16/2018 - Richard Schoen
+-Added methods to expose HTTP response data.
+-ExecuteNonQuery method was returning true if not connected even though query failed. 
+ Added additional checks to insure query success returns as true only on actual success.
+
+Version 1.0.1.2 - 12/20/2018 - Richard Schoen
+
+https://sitemule.github.io/ileusion/api
+/transaction
+/call - done
+/dq/send - done
+/dq/pop - done
+/qsh - Done but ILEusion service not working
+/cl - Done
+/sql - Done
+
+-Rename ExportDataTableToList to ConvertDataTableToList. Made method public since it's a utility method.
+-Created ConvertJsonToDataTable convenience method for those who want to deserialize Json results from any call to DataTable.
+-Created ConvertJsonToList convenience method for those who want to deserialize Json results from any call to a generic List.
+-Added ability to try to get value of JSON field even if missing. Good for checking individual field values. 
+  Created JSON value extraction methods: GetJsonAsString, GetJsonAsBool, GetJsonAsInt, GetJsonAsDouble,GetJsonAsFloat
+-Added SendToDataQueue, ReceiveToDataQueue, CreateDataQueue and DeleteDataQueue methods.
+-Added CheckObjectExists method. COnvenience method for CHKOBJ CL command.
+-Added SendMessage method. Convenience method for SNDMSG CL command.
+-Added ExecuteQshell command method. (/qsh action doesn't currently work though in ILEusion)
+-Added CreateFixedLengthPhysicalFile method for temp files in QSYS.LIB file system. 
+-Added encodeBase64 auth to SetUserInfoExt method. If true, Basic Auth is encoded with Base64.
+ ILEusion as of 12/19/2018 requires a base64 encoded header.
+-Renamed SetUserInfoExt to SetUserInfo. It overloads the existing SetUserInfo.
+-For SSL, we added TLS1.2 for default security setting when SSL enabled. 
+-For certificates added a setting on SetUserInfoExt to ignoeInvalidSslCertificates. Set to true if you want to 
+ ignore an invalid or expired certificate.
+
+------------------------------------------------------------------------------------------
+Feature ideas
+------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------
+ILEusion Problems found
+------------------------------------------------------------------------------------------
+12/16/2018 - Fixed - Appears to be buffer size limit or some other memory limit when selecting a large
+             number of records with multiple fields. Need to document and report.
+12/16/2018 - Open  - Qshell command call always returns: return=1.0 success=true. Tried simple mkdir /zzz and did not work. 
+
+
+------------------------------------------------------------------------------------------
+Helpful links
+------------------------------------------------------------------------------------------
+Setting up NGINX on IBMi
+https://www-01.ibm.com/support/docview.wss?uid=ibm10743711
+
+Reverse Proxy Using ExpressJS
+https://codeforgeek.com/2015/12/reverse-proxy-using-expressjs/
+
+
