@@ -698,7 +698,7 @@ public class ILEusionService
         ///  </summary>
         ///  <param name="sSQL">SQL Select. INSERT, UPDATE and DELETE not allowed </param>
         ///  <param name="sQueryResultOutputFile">Optional PC output file for XML response data. Otherwise data set is created from memory.</param>
-        ///  <returns>DataTable with results of query or Nothing</returns>
+        ///  <returns>DataTable with results of query or Nothing</returns> 
         ///  <remarks></remarks>
         public DataTable ExecuteSqlQueryToDataTable(string sSQL, string dataTableName = "Table1")
     {
