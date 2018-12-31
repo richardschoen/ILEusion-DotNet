@@ -116,8 +116,8 @@ public class ILEusionService
         ///  <param name="ibmiUser">IBM i User and HTTP Auth</param>
         ///  <param name="ibmiPass">IBM i Password and HTTP Auth</param>
         ///  <param name="useHttpCredentials">Use Apache HTTP authentication credentials</param>
-        ///  <param name="httpAuthUser">Http Auth user. Only set if HTTP auth credentials are different than IBMi user info and web server auth enabled.</param>
-        ///  <param name="httpAuthPass">Http Auth password. Only set if HTTP auth credentials are different than IBMi user info and web server auth enabled.</param>
+        ///  <param name="httpAuthUser">Http Auth user. Only set if HTTP auth user and password credentials are different than IBM i user info and web server auth enabled. Otherwise leave blank to use IBM i user.</param>
+        ///  <param name="httpAuthPass">Http Auth password. Only set if HTTP auth user and password credentials are different than IBM i user info and web server auth enabled. Otherwise leave blank to use IBM i password.</param>
         ///  <param name="encodeAuthBase64">Base64 encode user and password in Auth header. true=encode to base64, false=no encoding.Default=true</param>
         ///  <param name="allowInvalidSslCertificates">Optional Allow invallid certs. true=Yes, false=no. Default=false - certs must be valid.</param>
         ///  <returns>True-Success, False-Fail</returns>
@@ -137,9 +137,12 @@ public class ILEusionService
             // Change HTTP auth user and password to be other than default IBMi credentials
             if (httpAuthPass.Trim() != "" && httpAuthUser.Trim() != "")
             {
-                if (SetHttpUserInfo(httpAuthUser, httpAuthPass, useHttpCredentials))
+                if (SetHttpUserInfo(httpAuthUser, httpAuthPass, useHttpCredentials)==false)
                     throw new Exception("Error setting HTTP user info");
             }
+
+            // Set HTTP timeout
+            SetHttpTimeout(httpTimeout);
 
             // Set encode base 64 auth header
             _encodeAuthBase64 = encodeAuthBase64;
@@ -180,7 +183,7 @@ public class ILEusionService
             _User = sUser;
             _Password = sPassword;
             
-            // Set IBM i apache authentication user info default'
+            // Set IBM i apache authentication user and password info defaults to match the IBM i user credentials.
             _HttpUser = sUser;
             _HttpPassword = sPassword;
             

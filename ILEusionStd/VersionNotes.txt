@@ -37,6 +37,12 @@ https://sitemule.github.io/ileusion/api
 -For certificates added a setting on SetUserInfoExt to ignoeInvalidSslCertificates. Set to true if you want to 
  ignore an invalid or expired certificate.
 
+Version 1.0.1.3 - 12/27/2018 - Richard Schoen
+-SetUserInfo extended version does not update HTTP timeout. Fixed. 
+-If different HTTP auth credentials were passed to SetUserInfo other than blanks for the same 
+ IBMi credentials, the SetUserInfo for auth credentials would come back as true, yet we threw an errors. Oops.
+
+
 ------------------------------------------------------------------------------------------
 Feature ideas
 ------------------------------------------------------------------------------------------
